@@ -1,0 +1,124 @@
+/* This is the global page styling for the portfolio layout (WHAT IT IS).
+   It gives the page a calm neutral background, readable text, and a simple structure so the gallery can stand out (WHAT IT DOES).
+   A clean base makes the photography feel intentional and helps the grid remain the focus of the page (WHAT IT MEANS). */
+:root {
+  --page-bg: #f5f0ea;
+  --card-bg: #fffdfb;
+  --ink: #1d1b1a;
+  --muted: #5f584f;
+  --accent: #9a6f47;
+  --shadow: rgba(32, 21, 13, 0.08);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.6;
+  background: var(--page-bg);
+  color: var(--ink);
+}
+
+img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* .site-header styles the intro at the top of the page (WHAT IT IS).
+   It centers the photographer name and tagline so the page quickly communicates brand and focus (WHAT IT DOES).
+   A strong header creates a professional first impression and improves orientation for visitors (WHAT IT MEANS). */
+.site-header {
+  padding: 2.5rem 1.25rem 1.25rem;
+}
+
+.header-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.site-header h1 {
+  margin: 0 0 0.5rem;
+  font-size: clamp(2.1rem, 4vw, 3.3rem);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.site-header p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 1.05rem;
+}
+
+/* .page-content controls the width and spacing of the main content area (WHAT IT IS).
+   It keeps the gallery and reflection text from stretching edge to edge while preserving breathing room (WHAT IT DOES).
+   This makes the layout feel balanced on larger screens and easy to read on smaller ones (WHAT IT MEANS). */
+.page-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.25rem 2rem;
+}
+
+/* .gallery is the grid container (WHAT IT IS).
+   display: grid lays the photos out in rows and columns with equal spacing between them (WHAT IT DOES).
+   repeat(auto-fit, minmax(240px, 1fr)) makes as many equal columns as fit the screen, each at least 240px wide, so the gallery reflows on any screen with no media query (WHAT IT MEANS). */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1rem;
+  grid-auto-rows: minmax(220px, auto);
+  grid-auto-flow: dense;
+}
+
+/* .photo is each gallery item (WHAT IT IS).
+   It gives every image a consistent frame, rounded corners, and a subtle shadow for polish (WHAT IT DOES).
+   The consistent card styling makes the collection feel intentional and keeps the artwork readable (WHAT IT MEANS). */
+.photo {
+  margin: 0;
+  overflow: hidden;
+  border-radius: 0.75rem;
+  min-height: 220px;
+  background: var(--card-bg);
+  box-shadow: 0 10px 20px var(--shadow);
+}
+
+/* .photo-featured is the larger highlight image (WHAT IT IS).
+   It stretches across two columns to create a hero-like focal point in the gallery (WHAT IT DOES).
+   This feature photo draws attention and helps the layout feel editorial rather than a flat grid of equal thumbnails (WHAT IT MEANS). */
+.photo-featured {
+  /* featured photo spans 2 columns */
+  grid-column: span 2;
+  min-height: 320px;
+}
+
+/* .reflection styles the narrative paragraph under the gallery (WHAT IT IS).
+   It keeps the writing readable and visually separated from the images so the learning reflection feels intentional (WHAT IT DOES).
+   This spacing helps the page feel finished while maintaining a strong visual hierarchy (WHAT IT MEANS). */
+.reflection {
+  max-width: 900px;
+  margin: 2rem auto 0;
+  padding: 1.25rem 1.5rem;
+  border-left: 4px solid var(--accent);
+  background: rgba(255, 255, 255, 0.35);
+  color: var(--ink);
+  font-size: 1.03rem;
+}
+
+/* .site-footer gives the page a final closing line (WHAT IT IS).
+   It adds a contact and credit note below the main content so the portfolio feels complete (WHAT IT DOES).
+   This helps visitors know who created the work and how to get in touch (WHAT IT MEANS). */
+.site-footer {
+  padding: 1rem 1.25rem 2.5rem;
+  text-align: center;
+  color: var(--muted);
+}
+
+.site-footer p {
+  margin: 0;
+}
+
